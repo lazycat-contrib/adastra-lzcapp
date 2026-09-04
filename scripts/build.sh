@@ -25,7 +25,7 @@ mkdir -p "$source_dir"
 
 curl --fail --location --silent --show-error \
   --retry 3 --connect-timeout 15 --max-time 180 \
-  "https://github.com/gunerguner/AdAstra/archive/${commit}.tar.gz" \
+  "https://api.github.com/repos/gunerguner/AdAstra/tarball/${commit}" \
   --output "$archive"
 printf '%s  %s\n' "$expected_sha" "$archive" | sha256sum --check --status
 tar -xzf "$archive" -C "$source_dir" --strip-components=1
