@@ -1,0 +1,10 @@
+application:
+  subdomain: adastra
+  multi_instance: false
+  routes:
+    - /=file:///lzcapp/pkg/content/dist
+  public_path:
+    - /
+
+usage: |
+  Open Ad Astra to explore the real-time sky for a selected location and date. The application is a static offline-capable PWA with no runtime backend or persistent server data.

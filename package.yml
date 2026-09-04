@@ -1,0 +1,18 @@
+package: community.lazycat.app.adastra
+version: 1.0.0
+name: Ad Astra
+description: Interactive, offline-capable real-time sky app for the web
+min_os_version: 1.5.0
+homepage: https://github.com/gunerguner/AdAstra
+author: gunerguner
+license: MIT
+permissions:
+  required:
+    - net.internet
+locales:
+  zh:
+    name: Ad Astra
+    description: 可交互、可离线使用的实时星空 Web 应用
+  en:
+    name: Ad Astra
+    description: Interactive, offline-capable real-time sky app for the web
