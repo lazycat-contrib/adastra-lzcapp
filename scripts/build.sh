@@ -1,6 +1,11 @@
 #!/bin/sh
 set -eu
 
+if [ "${GITHUB_ACTIONS:-}" != "true" ]; then
+  printf 'Ad Astra source builds are restricted to GitHub Actions\n' >&2
+  exit 1
+fi
+
 project_root=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 version=${LAZYCAT_VERSION:-$(awk '/^version:/ { print $2; exit }' "$project_root/package.yml")}
 source_line=$(awk -v version="$version" '$1 == version { print; exit }' "$project_root/upstream-sources.txt")

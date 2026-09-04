@@ -12,6 +12,8 @@ b944f95fcd2cd44faaf086e585b227844c40ac2a608c269df27f8fa46a7e759c
 
 The build runs `pnpm verify` and `pnpm build`. It deliberately does not run `build:release`, because upstream documents that the production catalog's data-license gate is not yet available and the Docker deployment uses the fixture catalog.
 
+`scripts/build.sh` requires `GITHUB_ACTIONS=true`; local `lzc-cli project release` cannot download or build the upstream source.
+
 ## Runtime
 
 Ad Astra is packaged as static content with no runtime container, database, or persistent volume. The PWA and Service Worker are served over the LazyCat HTTPS application domain.
